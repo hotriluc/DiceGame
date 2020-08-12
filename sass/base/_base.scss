@@ -1,0 +1,25 @@
+*, 
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+body {
+    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(../../img/back.jpg);
+    background-size: cover;
+    background-position: center;
+    
+    position: relative;
+    background-repeat: no-repeat;
+    height: 100vh;
+   
+    font-family: Lato;
+    font-weight: 300;
+    color: #555;
+}
+
+html {
+    font-size: 62.5%;
+}
