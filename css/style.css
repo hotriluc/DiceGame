@@ -37,10 +37,10 @@ html {
     flex-direction: column;
     justify-content: space-between;
     align-items: center; }
-    .gameboard__player-panel--1 {
+    .gameboard__player-panel--0 {
       grid-row: 1/-1;
       grid-column: col-start 1 / col-end 4; }
-    .gameboard__player-panel--2 {
+    .gameboard__player-panel--1 {
       grid-row: 1/-1;
       grid-column: col-start 5 / -1; }
   .gameboard__img {
@@ -81,6 +81,10 @@ html {
   position: absolute;
   color: #EB4D4D;
   top: -7px; }
+
+.winner .player__name {
+  font-weight: 300;
+  color: #EB4D4D; }
 
 .player__score {
   font-size: 80px;
