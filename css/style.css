@@ -26,6 +26,7 @@ html {
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   display: grid;
+  position: relative;
   grid-template-columns: repeat(8, [col-start] 1fr [col-end]); }
   .gameboard__new {
     grid-row: 1/2;
@@ -46,12 +47,23 @@ html {
   .gameboard__img {
     grid-column: col-start 4/ col-end 5;
     grid-row: 1/2;
-    justify-self: center;
     z-index: 25;
-    margin-top: 15rem; }
+    margin-top: 21rem;
+    display: grid;
+    grid-template-rows: repeat(4, minmax(min-content, 6.5rem));
+    grid-template-columns: repeat(4, minmax(min-content, 6.5rem)); }
   .gameboard__dice {
-    height: 100px;
-    box-shadow: 0 1rem 6rem rgba(0, 0, 0, 0.1); }
+    height: 6.5rem; }
+    .gameboard__dice--1 {
+      grid-column: 2/3;
+      transform: scale(1.2);
+      z-index: 30;
+      box-shadow: 0.5rem 1rem 4rem rgba(0, 0, 0, 0.15); }
+    .gameboard__dice--2 {
+      grid-row: 2/3;
+      grid-column: 3/4;
+      transform: scale(1.2) translateY(-30%);
+      box-shadow: 0.75rem 1rem 4rem rgba(0, 0, 0, 0.225); }
   .gameboard__game-nav {
     grid-row: 1/-1;
     grid-column: col-start 4/ col-end 5;
@@ -61,6 +73,32 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; }
+  .gameboard__win-score-box {
+    grid-row: 1/-1;
+    grid-column: col-start 4/ col-end 5;
+    z-index: 25;
+    justify-self: center;
+    width: 70%;
+    margin-top: 10rem;
+    text-align: center; }
+  .gameboard__win-score {
+    font-family: Lato;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #EB4D4D; }
+  .gameboard__win-input {
+    margin-top: 2rem;
+    width: 100%;
+    border: none;
+    text-align: center;
+    border-bottom: 2px solid #EB4D4D;
+    outline: none;
+    padding: .7rem .5rem;
+    -moz-appearance: textfield; }
+  .gameboard__win-input ::-webkit-outer-spin-button, .gameboard__win-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
 
 .player__name {
   font-size: 40px;
@@ -152,3 +190,38 @@ i {
 
 .btn-hold {
   margin-top: 1.5rem; }
+
+.game-rules {
+  z-index: 100;
+  position: absolute;
+  padding: 3rem;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #EB4D4D;
+  color: white;
+  transition: all .4s;
+  transform: scale(0); }
+  .game-rules__rule {
+    font-size: 1.5rem; }
+    .game-rules__rule:not(:last-child) {
+      margin-bottom: 1rem; }
+
+.game-rules-animation {
+  transform: scale(1);
+  display: block; }
+
+.question-btn:link, .question-btn:visited {
+  text-decoration: none;
+  font-size: 3.5rem;
+  color: #EB4D4D;
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  z-index: 100; }
+
+.question-btn:hover ~ .game-rules {
+  transform: scale(1);
+  display: block; }

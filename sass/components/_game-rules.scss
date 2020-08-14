@@ -1,0 +1,56 @@
+.game-rules {
+
+    z-index: 100;
+    position: absolute;
+    padding: 3rem;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    background-color: #EB4D4D;
+    color: white;
+    
+    
+    transition: all .4s;
+    transform: scale(0);
+   
+
+    
+    &__rule {
+        font-size: 1.5rem;
+
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+    }
+    
+
+
+   
+}
+.game-rules-animation {
+    transform: scale(1);
+    display: block;
+}
+
+.question-btn{
+    &:link,&:visited {
+        text-decoration: none;
+        font-size: 3.5rem;
+        color: #EB4D4D;
+        display: block;
+        
+        position: absolute;
+        top: 20px;
+        left:  50px;
+        z-index: 100;
+    }
+    &:hover ~ .game-rules {
+        transform: scale(1);
+        display: block;
+        
+    }
+
+    
+}
