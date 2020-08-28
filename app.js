@@ -177,6 +177,10 @@ document.querySelector('.btn-new').addEventListener('click', function(){
 );
 
 document.querySelector('.question-btn').addEventListener('click', function() {
-    document.getElementById('rules').classList.add('game-rules-animation');
+    document.getElementById('popup').classList.add('popup-open');
+});
+
+document.querySelector('.blocker').addEventListener('click', function() {
+    document.getElementById('popup').classList.remove('popup-open');
 });
 
